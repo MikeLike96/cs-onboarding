@@ -14,9 +14,12 @@ export default function InviteForm() {
   const router = useRouter();
 
   const handleAddEmail = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter' && currentEmail && emails.length < 24) {
-      setEmails([...emails, currentEmail]);
-      setCurrentEmail('');
+    if (e.key === 'Enter') {
+      e.preventDefault(); // Prevent form submission
+      if (currentEmail && emails.length < 24) {
+        setEmails([...emails, currentEmail]);
+        setCurrentEmail('');
+      }
     }
   };
 
