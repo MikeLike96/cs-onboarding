@@ -1,21 +1,11 @@
 "use client";
 
-import { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
-import confetti from 'canvas-confetti';
 import { useRouter } from 'next/navigation';
 
 export default function CongratulationsPage() {
   const router = useRouter();
-
-  useEffect(() => {
-    confetti({
-      particleCount: 100,
-      spread: 70,
-      origin: { y: 0.6 }
-    });
-  }, []);
 
   const handleContinue = () => {
     router.push('/invite-team');

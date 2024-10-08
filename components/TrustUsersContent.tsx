@@ -19,7 +19,7 @@ export default function TrustUsersContent() {
       <p className="text-sm text-muted-foreground mb-2">Step 2 of 4</p>
       <h1 className="text-3xl font-bold mb-6">How to trust users</h1>
       <p className="text-base text-foreground/90 mb-8">
-        Find your trusted Swarm users. By trusting them, you consent to the app coordinating LinkedIn engagement between you and these users. This includes managing likes on each other's posts, promoting mutual support within the network and optimizing yours and your company's collective LinkedIn presence.
+        Find your trusted Swarm users. By trusting them, you consent to the app coordinating LinkedIn engagement between you and these users. This includes managing likes on each other&apos;s posts, promoting mutual support within the network and optimizing yours and your company&apos;s collective LinkedIn presence.
       </p>
       <div className="flex">
         <Button variant="outline" onClick={handleBack} className="border-[#3A3D4A] text-white mr-4">

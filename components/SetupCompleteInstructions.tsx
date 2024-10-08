@@ -22,7 +22,7 @@ export default function SetupCompleteInstructions() {
         <li>Your swarm is set up</li>
         <li>Trusted users are added</li>
         <li>Your profile is created</li>
-        <li>You're ready to start collaborating</li>
+        <li>You&apos;re ready to start collaborating</li>
       </ul>
       <div className="flex">
         <Button variant="outline" onClick={handleBack} className="border-[#3A3D4A] text-white mr-4">

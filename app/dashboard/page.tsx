@@ -10,9 +10,9 @@ export default function DashboardPage() {
           Welcome to Your Dashboard
         </h1>
         <p className="text-lg text-foreground/80 mb-8 max-w-[80%] mx-auto">
-          This is a placeholder for your dashboard. You can customize this page with your swarm's content and features.
+          This is a placeholder for your dashboard. You can customize this page with your swarm&apos;s content and features.
         </p>
-        <Link href="/">
+        <Link href="/" passHref legacyBehavior>
           <Button className="bg-primary hover:bg-primary/90 text-white px-8 py-3 text-lg">
             Back to Home
           </Button>

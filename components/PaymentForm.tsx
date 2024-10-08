@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Form, FormControl, FormField, FormItem, FormLabel } from '@/components/ui/form';
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
@@ -13,7 +13,7 @@ import Image from 'next/image';
 
 const formSchema = z.object({
   nameOnCard: z.string().min(2, { message: "Name must be at least 2 characters." }),
-  cardNumber: z.string().regex(/^\d{16}$/, { message: "Card number must be 16 digits." }),
+  cardNumber: z.string().regex(/^\d{4}\s\d{4}\s\d{4}\s\d{4}$/, { message: "Card number must be 16 digits in format XXXX XXXX XXXX XXXX." }),
   expirationDate: z.string().regex(/^(0[1-9]|1[0-2])\/\d{2}$/, { message: "Expiration date must be in MM/YY format." }),
   cvc: z.string().regex(/^\d{3,4}$/, { message: "CVC must be 3 or 4 digits." }),
 });
@@ -41,6 +41,23 @@ export default function PaymentForm() {
     router.push('/verify');
   };
 
+  const formatCardNumber = (value: string) => {
+    const v = value.replace(/\s+/g, "").replace(/[^0-9]/gi, "");
+    const matches = v.match(/\d{4,16}/g);
+    const match = (matches && matches[0]) || "";
+    const parts = [];
+
+    for (let i = 0, len = match.length; i < len; i += 4) {
+      parts.push(match.substring(i, i + 4));
+    }
+
+    if (parts.length) {
+      return parts.join(" ");
+    } else {
+      return value;
+    }
+  };
+
   return (
     <div className="w-full max-w-md">
       <Button variant="ghost" className="mb-6 pl-0" onClick={handleBack}>
@@ -62,6 +79,7 @@ export default function PaymentForm() {
                 <FormControl>
                   <Input placeholder="John Doe" className="input-bg border-border" {...field} />
                 </FormControl>
+                <FormMessage />
               </FormItem>
             )}
           />
@@ -72,8 +90,14 @@ export default function PaymentForm() {
               <FormItem>
                 <FormLabel>Card Number</FormLabel>
                 <FormControl>
-                  <Input placeholder="1234 5678 9012 3456" className="input-bg border-border" {...field} />
+                  <Input 
+                    placeholder="1234 5678 9012 3456" 
+                    className="input-bg border-border" 
+                    {...field} 
+                    onChange={(e) => field.onChange(formatCardNumber(e.target.value))}
+                  />
                 </FormControl>
+                <FormMessage />
               </FormItem>
             )}
           />
@@ -87,6 +111,7 @@ export default function PaymentForm() {
                   <FormControl>
                     <Input placeholder="MM/YY" className="input-bg border-border" {...field} />
                   </FormControl>
+                  <FormMessage />
                 </FormItem>
               )}
             />
@@ -99,6 +124,7 @@ export default function PaymentForm() {
                   <FormControl>
                     <Input placeholder="123" className="input-bg border-border" {...field} />
                   </FormControl>
+                  <FormMessage />
                 </FormItem>
               )}
             />
@@ -109,7 +135,7 @@ export default function PaymentForm() {
         </form>
       </Form>
       <p className="text-sm text-muted-foreground mt-4 text-center">
-        Your card won't be charged during the 14-day free trial.
+        Your card won&apos;t be charged during the 14-day free trial.
       </p>
       <div className="flex items-center mt-4">
         <Image src="/stripe-badge.svg" alt="Powered by Stripe" width={60} height={20} />
