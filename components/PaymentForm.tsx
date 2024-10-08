@@ -143,7 +143,7 @@ export default function PaymentForm() {
         Your card won&apos;t be charged during the 14-day free trial.
       </p>
       <div className="flex items-center justify-center mt-4">
-        <Image src="/stripe-badge.svg" alt="Powered by Stripe" width={60} height={20} />
+        <Image src="/stripe-png.png" alt="Powered by Stripe" width={60} height={20} />
         <span className="text-xs text-muted-foreground ml-2">Powered by Stripe</span>
       </div>
     </div>
