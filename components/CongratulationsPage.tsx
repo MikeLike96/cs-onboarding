@@ -3,16 +3,56 @@
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
+import { useState, useEffect } from 'react';
+import dynamic from 'next/dynamic';
+
+// Dynamically import react-confetti to avoid SSR issues
+const ReactConfetti = dynamic(() => import('react-confetti'), { ssr: false });
 
 export default function CongratulationsPage() {
   const router = useRouter();
+  const [confettiDimensions, setConfettiDimensions] = useState({ width: 0, height: 0 });
+  const [runConfetti, setRunConfetti] = useState(false);
+
+  useEffect(() => {
+    // Set dimensions for confetti
+    setConfettiDimensions({
+      width: window.innerWidth,
+      height: window.innerHeight,
+    });
+
+    // Start confetti immediately
+    setRunConfetti(true);
+
+    // Stop confetti after 2 seconds
+    const timer = setTimeout(() => setRunConfetti(false), 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleContinue = () => {
     router.push('/invite-team');
   };
 
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center px-4">
+    <div className="min-h-screen bg-background flex items-center justify-center px-4 relative overflow-hidden">
+      {runConfetti && (
+        <ReactConfetti
+          width={confettiDimensions.width}
+          height={confettiDimensions.height}
+          recycle={false}
+          numberOfPieces={100}
+          gravity={0.2}
+          initialVelocityY={30}
+          tweenDuration={100}
+          confettiSource={{
+            x: confettiDimensions.width / 2,
+            y: confettiDimensions.height / 2,
+            w: 0,
+            h: 0,
+          }}
+        />
+      )}
       <motion.div 
         className="max-w-[1440px] w-full text-center"
         initial={{ opacity: 0, y: 20 }}
