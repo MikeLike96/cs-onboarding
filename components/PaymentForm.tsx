@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, CreditCard } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
@@ -66,7 +66,7 @@ export default function PaymentForm() {
       </Button>
       <div className="flex justify-center mb-6">
         <div className="bg-primary rounded-full p-4">
-          <Image src="/credit-card-icon.svg" alt="Credit Card" width={32} height={32} />
+          <CreditCard className="h-8 w-8 text-white" />
         </div>
       </div>
       <h1 className="text-2xl font-bold mb-2 text-center">Enter Payment Details</h1>
