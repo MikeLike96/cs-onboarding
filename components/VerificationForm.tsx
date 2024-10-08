@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Lock } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 
@@ -37,13 +37,18 @@ export default function VerificationForm() {
   };
 
   return (
-    <div className="w-full max-w-md">
+    <div className="w-full max-w-md mx-auto">
       <Button variant="ghost" className="mb-6 pl-0" onClick={handleBack}>
         <ArrowLeft className="mr-2 h-4 w-4" />
         Back
       </Button>
-      <h1 className="text-3xl font-bold mb-2">Enter Verification Code</h1>
-      <p className="text-base text-muted-foreground mb-8 md:max-w-[50%]">
+      <div className="flex justify-center mb-6">
+        <div className="bg-primary rounded-full p-4">
+          <Lock className="h-8 w-8 text-white" />
+        </div>
+      </div>
+      <h1 className="text-2xl font-bold mb-2 text-center">Enter Verification Code</h1>
+      <p className="text-sm text-muted-foreground mb-8 text-center max-w-[80%] mx-auto">
         Please enter the 5-character verification code sent to your email inbox.
       </p>
       <form onSubmit={handleSubmit} className="space-y-6">

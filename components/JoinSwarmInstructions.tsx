@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from 'next/navigation';
+import { ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export default function JoinSwarmInstructions() {
@@ -15,21 +16,27 @@ export default function JoinSwarmInstructions() {
   };
 
   return (
-    <div className="w-full max-w-2xl">
-      <p className="text-sm text-muted-foreground mb-2">Step 1 of 4</p>
-      <h1 className="text-3xl font-bold mb-6">Join swarm and login</h1>
-      <ol className="list-decimal list-inside space-y-4 mb-8 text-base text-foreground/90">
+    <div className="w-full max-w-md mx-auto">
+      <Button variant="ghost" className="mb-6 pl-0" onClick={handleBack}>
+        <ArrowLeft className="mr-2 h-4 w-4" />
+        Back
+      </Button>
+      <h1 className="text-2xl font-bold mb-2 text-center">Join swarm and login</h1>
+      <p className="text-sm text-muted-foreground mb-8 text-center max-w-[80%] mx-auto">
+        Step 1 of 4: Follow these instructions to join your swarm and log in.
+      </p>
+      <ol className="list-decimal list-inside space-y-4 mb-8 text-sm text-foreground/90">
         <li>Open Content Swarm application</li>
         <li>Enter your Swarm ID</li>
         <li>Sign in with LinkedIn credentials</li>
         <li>Accept user agreement</li>
       </ol>
-      <div className="flex">
-        <Button variant="outline" onClick={handleBack} className="border-[#3A3D4A] text-white mr-4">
-          Back
-        </Button>
-        <Button onClick={handleNext} className="bg-primary hover:bg-primary/90 text-white">
+      <div className="space-y-4">
+        <Button onClick={handleNext} className="w-full bg-primary hover:bg-primary/90 text-white">
           Next
+        </Button>
+        <Button variant="outline" onClick={handleBack} className="w-full border-[#3A3D4A] text-white">
+          Back
         </Button>
       </div>
     </div>

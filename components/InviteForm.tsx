@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -39,16 +39,21 @@ export default function InviteForm() {
   };
 
   return (
-    <div className="w-full max-w-md">
+    <div className="w-full max-w-md mx-auto">
       <Button variant="ghost" className="mb-6 pl-0" onClick={() => router.back()}>
         <ArrowLeft className="mr-2 h-4 w-4" />
         Back
       </Button>
-      <h1 className="text-3xl font-bold mb-2">Invite Team Members</h1>
-      <p className="text-base text-muted-foreground mb-8">
+      <div className="flex justify-center mb-6">
+        <div className="bg-primary rounded-full p-4">
+          <Users className="h-8 w-8 text-white" />
+        </div>
+      </div>
+      <h1 className="text-2xl font-bold mb-2 text-center">Invite Team Members</h1>
+      <p className="text-sm text-muted-foreground mb-8 text-center max-w-[80%] mx-auto">
         Enter email addresses to invite team members. You can invite up to 24 members.
       </p>
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form onSubmit={handleSubmit} className="space-y-4">
         <div className="space-y-2">
           <Label htmlFor="email-input">Email Addresses ({emails.length}/24)</Label>
           <div className="bg-[#2A2C37] border border-[#3A3D4A] rounded-lg p-2 flex flex-wrap gap-2">
@@ -79,10 +84,10 @@ export default function InviteForm() {
             />
           </div>
         </div>
-        <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-white h-12">
+        <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-white">
           Confirm and Continue
         </Button>
-        <Button type="button" variant="outline" onClick={handleSkip} className="w-full border-[#3A3D4A] text-white h-12">
+        <Button type="button" variant="outline" onClick={handleSkip} className="w-full border-[#3A3D4A] text-white">
           Skip this step for now
         </Button>
       </form>

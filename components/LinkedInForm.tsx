@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Form, FormControl, FormField, FormItem, FormLabel } from '@/components/ui/form';
@@ -46,17 +46,22 @@ export default function LinkedInForm() {
   };
 
   return (
-    <div className="w-full max-w-md">
+    <div className="w-full max-w-md mx-auto">
       <Button variant="ghost" className="mb-6 pl-0" onClick={handleBack}>
         <ArrowLeft className="mr-2 h-4 w-4" />
         Back
       </Button>
-      <h1 className="text-3xl font-bold mb-2">Connect Your LinkedIn Profile</h1>
-      <p className="text-base text-muted-foreground mb-8">
+      <div className="flex justify-center mb-6">
+        <div className="bg-primary rounded-full p-4">
+          <Linkedin className="h-8 w-8 text-white" />
+        </div>
+      </div>
+      <h1 className="text-2xl font-bold mb-2 text-center">Connect Your LinkedIn Profile</h1>
+      <p className="text-sm text-muted-foreground mb-8 text-center max-w-[80%] mx-auto">
         Paste your LinkedIn profile URL to sync your profile with our app.
       </p>
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
           <FormField
             control={form.control}
             name="linkedinUrl"

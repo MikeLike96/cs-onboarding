@@ -19,14 +19,14 @@ export default function EmailCaptureForm() {
   };
 
   return (
-    <div className="w-full max-w-md">
-      <div className="mb-6 flex justify-center">
-        <div className="rounded-full bg-primary p-4">
+    <div className="w-full max-w-md mx-auto">
+      <div className="flex justify-center mb-6">
+        <div className="bg-primary rounded-full p-4">
           <Mail className="h-8 w-8 text-white" />
         </div>
       </div>
-      <h1 className="text-3xl font-bold mb-2 text-center">Enter your email</h1>
-      <p className="text-muted-foreground mb-6 text-center">
+      <h1 className="text-2xl font-bold mb-2 text-center">Enter your email</h1>
+      <p className="text-sm text-muted-foreground mb-8 text-center max-w-[80%] mx-auto">
         Please enter your email to receive a confirmation and get started.
       </p>
       <form onSubmit={handleSubmit} className="space-y-4">
@@ -35,10 +35,10 @@ export default function EmailCaptureForm() {
           placeholder="Company email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="bg-card text-foreground border-none"
+          className="input-bg border-border"
           required
         />
-        <Button type="submit" className="w-full bg-primary hover:bg-primary/90">
+        <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-white">
           Submit
         </Button>
       </form>

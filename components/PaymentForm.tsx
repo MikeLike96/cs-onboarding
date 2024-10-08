@@ -59,17 +59,22 @@ export default function PaymentForm() {
   };
 
   return (
-    <div className="w-full max-w-md">
+    <div className="w-full max-w-md mx-auto">
       <Button variant="ghost" className="mb-6 pl-0" onClick={handleBack}>
         <ArrowLeft className="mr-2 h-4 w-4" />
         Back
       </Button>
-      <h1 className="text-3xl font-bold mb-2">Enter Payment Details</h1>
-      <p className="text-base text-muted-foreground mb-8">
+      <div className="flex justify-center mb-6">
+        <div className="bg-primary rounded-full p-4">
+          <Image src="/credit-card-icon.svg" alt="Credit Card" width={32} height={32} />
+        </div>
+      </div>
+      <h1 className="text-2xl font-bold mb-2 text-center">Enter Payment Details</h1>
+      <p className="text-sm text-muted-foreground mb-8 text-center max-w-[80%] mx-auto">
         Please provide your credit card information to start your free trial.
       </p>
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
           <FormField
             control={form.control}
             name="nameOnCard"
@@ -130,14 +135,14 @@ export default function PaymentForm() {
             />
           </div>
           <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-white">
-            Begin
+            Begin Free Trial
           </Button>
         </form>
       </Form>
       <p className="text-sm text-muted-foreground mt-4 text-center">
         Your card won&apos;t be charged during the 14-day free trial.
       </p>
-      <div className="flex items-center mt-4">
+      <div className="flex items-center justify-center mt-4">
         <Image src="/stripe-badge.svg" alt="Powered by Stripe" width={60} height={20} />
         <span className="text-xs text-muted-foreground ml-2">Powered by Stripe</span>
       </div>
