@@ -134,11 +134,11 @@ export default function AccountSetupForm() {
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
-                    <SelectItem value="1-10">1-10 employees</SelectItem>
-                    <SelectItem value="11-50">11-50 employees</SelectItem>
-                    <SelectItem value="51-200">51-200 employees</SelectItem>
-                    <SelectItem value="201-500">201-500 employees</SelectItem>
-                    <SelectItem value="501+">501+ employees</SelectItem>
+                    <SelectItem value="10-24">10-24 Users</SelectItem>
+                    <SelectItem value="25-49">25-49 Users</SelectItem>
+                    <SelectItem value="50-99">50-99 Users</SelectItem>
+                    <SelectItem value="100-249">100-249 Users</SelectItem>
+                    <SelectItem value="250+">250+ Users</SelectItem>
                   </SelectContent>
                 </Select>
               </FormItem>
