@@ -14,7 +14,7 @@ import Image from 'next/image';
 const formSchema = z.object({
   nameOnCard: z.string().min(2, { message: "Name must be at least 2 characters." }),
   cardNumber: z.string().regex(/^\d{4}\s\d{4}\s\d{4}\s\d{4}$/, { message: "Card number must be 16 digits in format XXXX XXXX XXXX XXXX." }),
-  expirationDate: z.string().regex(/^(0[1-9]|1[0-2])\/\d{2}$/, { message: "Expiration date must be in MM/YY format." }),
+  expirationDate: z.string().regex(/^\d{4}$/, { message: "Expiration date must be 4 digits (MMYY)." }),
   cvc: z.string().regex(/^\d{3,4}$/, { message: "CVC must be 3 or 4 digits." }),
 });
 
@@ -56,6 +56,12 @@ export default function PaymentForm() {
     } else {
       return value;
     }
+  };
+
+  const formatExpirationDate = (value: string) => {
+    const cleaned = value.replace(/\D/g, '');
+    const limited = cleaned.slice(0, 4);
+    return limited;
   };
 
   return (
@@ -114,7 +120,13 @@ export default function PaymentForm() {
                 <FormItem className="flex-1">
                   <FormLabel>Expiration Date</FormLabel>
                   <FormControl>
-                    <Input placeholder="MM/YY" className="input-bg border-border placeholder:text-muted-foreground/50" {...field} />
+                    <Input 
+                      placeholder="MMYY" 
+                      className="input-bg border-border placeholder:text-muted-foreground/50" 
+                      {...field} 
+                      onChange={(e) => field.onChange(formatExpirationDate(e.target.value))}
+                      maxLength={4}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
