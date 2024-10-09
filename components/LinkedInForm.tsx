@@ -71,7 +71,7 @@ export default function LinkedInForm() {
                 <FormControl>
                   <Input 
                     placeholder="https://www.linkedin.com/in/yourprofile" 
-                    className="input-bg border-border"
+                    className="input-bg border-border placeholder:text-muted-foreground/50"
                     {...field}
                   />
                 </FormControl>

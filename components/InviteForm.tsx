@@ -80,7 +80,7 @@ export default function InviteForm() {
               value={currentEmail}
               onChange={(e) => setCurrentEmail(e.target.value)}
               onKeyDown={handleAddEmail}
-              className="bg-transparent border-none text-white placeholder-[#6C7080] flex-grow min-w-[200px]"
+              className="input-bg border-border placeholder:text-muted-foreground/50 bg-transparent border-none text-white flex-grow min-w-[200px]"
             />
           </div>
         </div>
