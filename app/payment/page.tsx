@@ -1,6 +1,6 @@
 import Header from '@/components/Header';
 import PaymentForm from '@/components/PaymentForm';
-import ImagePlaceholder from '@/components/ImagePlaceholder';
+import ImagePlaceholder from '@/components/ImagePlaceholder3';
 
 export default function PaymentPage() {
   return (
