@@ -2,7 +2,7 @@
 
 import Header from '@/components/Header';
 import InviteForm from '@/components/InviteForm';
-import ImagePlaceholder from '@/components/ImagePlaceholder';
+import ImagePlaceholder from '@/components/ImagePlaceholder6';
 
 export default function InviteTeamPage() {
   return (
