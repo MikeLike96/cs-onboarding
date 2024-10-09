@@ -11,7 +11,7 @@ export default function EmailCaptureImagePlaceholder() {
           animationData={animationData}
           loop={true}
           autoplay={true}
-          style={{ width: '100%', height: '100%' }}
+          style={{ width: '100%', height: '120%' }}
           rendererSettings={{
             preserveAspectRatio: 'xMidYMid contain'
           }}
