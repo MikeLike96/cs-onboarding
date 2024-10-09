@@ -1,6 +1,6 @@
 import Header from '@/components/Header';
 import LinkedInForm from '@/components/LinkedInForm';
-import ImagePlaceholder from '@/components/ImagePlaceholder';
+import ImagePlaceholder from '@/components/ImagePlaceholder5';
 
 export default function LinkedInConnectPage() {
   return (
