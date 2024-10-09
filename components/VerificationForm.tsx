@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { ArrowLeft, Lock } from 'lucide-react';
 import { Input } from '@/components/ui/input';
@@ -9,6 +9,12 @@ import { Button } from '@/components/ui/button';
 export default function VerificationForm() {
   const [verificationCode, setVerificationCode] = useState(['', '', '', '', '']);
   const router = useRouter();
+  const firstInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    // Focus on the first input field when the component mounts
+    firstInputRef.current?.focus();
+  }, []);
 
   const handleInputChange = (index: number, value: string) => {
     if (value.length <= 1) {
@@ -63,6 +69,7 @@ export default function VerificationForm() {
               value={digit}
               onChange={(e) => handleInputChange(index, e.target.value)}
               className="w-12 h-12 text-center text-2xl font-bold input-bg border-border"
+              ref={index === 0 ? firstInputRef : null}
             />
           ))}
         </div>
