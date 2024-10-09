@@ -35,7 +35,7 @@ export default function EmailCaptureForm() {
           placeholder="Company email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="input-bg border-border"
+          className="input-bg border-border placeholder:text-muted-foreground/50"
           required
         />
         <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-white">

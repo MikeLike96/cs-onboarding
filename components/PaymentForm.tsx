@@ -82,7 +82,7 @@ export default function PaymentForm() {
               <FormItem>
                 <FormLabel>Name on Card</FormLabel>
                 <FormControl>
-                  <Input placeholder="John Doe" className="input-bg border-border" {...field} />
+                  <Input placeholder="John Doe" className="input-bg border-border placeholder:text-muted-foreground/50" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -97,7 +97,7 @@ export default function PaymentForm() {
                 <FormControl>
                   <Input 
                     placeholder="1234 5678 9012 3456" 
-                    className="input-bg border-border" 
+                    className="input-bg border-border placeholder:text-muted-foreground/50" 
                     {...field} 
                     onChange={(e) => field.onChange(formatCardNumber(e.target.value))}
                   />
@@ -114,7 +114,7 @@ export default function PaymentForm() {
                 <FormItem className="flex-1">
                   <FormLabel>Expiration Date</FormLabel>
                   <FormControl>
-                    <Input placeholder="MM/YY" className="input-bg border-border" {...field} />
+                    <Input placeholder="MM/YY" className="input-bg border-border placeholder:text-muted-foreground/50" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -127,7 +127,7 @@ export default function PaymentForm() {
                 <FormItem className="flex-1">
                   <FormLabel>CVC</FormLabel>
                   <FormControl>
-                    <Input placeholder="123" className="input-bg border-border" {...field} />
+                    <Input placeholder="123" className="input-bg border-border placeholder:text-muted-foreground/50" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
