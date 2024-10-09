@@ -1,6 +1,6 @@
 import Header from '@/components/Header';
 import VerificationForm from '@/components/VerificationForm';
-import ImagePlaceholder from '@/components/ImagePlaceholder';
+import ImagePlaceholder from '@/components/ImagePlaceholder2';
 
 export default function VerificationPage() {
   return (
