@@ -1,6 +1,6 @@
 import Header from '@/components/Header';
 import AccountSetupForm from '@/components/AccountSetupForm';
-import ImagePlaceholder from '@/components/ImagePlaceholder';
+import ImagePlaceholder from '@/components/ImagePlaceholder4';
 
 export default function WelcomePage() {
   return (
