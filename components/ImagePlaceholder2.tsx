@@ -1,16 +1,20 @@
-import Image from 'next/image';
+'use client';
+
+import Lottie from 'lottie-react';
+import animationData from '/Animation - female.json';
 
 export default function EmailCaptureImagePlaceholder() {
   return (
-    <div className="w-full md:w-2/5 aspect-[4/3] rounded-l-lg hidden md:flex items-center justify-center overflow-hidden">
-      <div className="relative w-[80%] h-[80%]">
-        <Image
-          src="/"
-          alt="Email Capture Illustration"
-          fill
-          sizes="(max-width: 768px) 100vw, 32vw"
-          className="object-contain"
-          priority
+    <div className="w-full md:w-1/2 aspect-[4/3] rounded-l-lg hidden md:flex items-center justify-center overflow-hidden bg-gray-800">
+      <div className="relative w-full h-full">
+        <Lottie
+          animationData={animationData}
+          loop={true}
+          autoplay={true}
+          style={{ width: '100%', height: '100%' }}
+          rendererSettings={{
+            preserveAspectRatio: 'xMidYMid contain'
+          }}
         />
       </div>
     </div>
