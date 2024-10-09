@@ -58,7 +58,7 @@ export default function LinkedInForm() {
       </div>
       <h1 className="text-2xl font-bold mb-2 text-center">Connect Your LinkedIn Profile</h1>
       <p className="text-sm text-muted-foreground mb-8 text-center max-w-[80%] mx-auto">
-        Paste your LinkedIn profile URL to sync your profile with our app.
+        Paste your company LinkedIn profile URL to sync your profile with our app.
       </p>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">

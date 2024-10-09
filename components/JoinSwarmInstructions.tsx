@@ -21,7 +21,7 @@ export default function JoinSwarmInstructions() {
         <ArrowLeft className="mr-2 h-4 w-4" />
         Back
       </Button>
-      <h1 className="text-2xl font-bold mb-2 text-center">Join swarm and login</h1>
+      <h1 className="text-2xl font-bold mb-2 text-center">Take Your First Steps with Content Swarm</h1>
       <p className="text-sm text-muted-foreground mb-8 text-center max-w-[80%] mx-auto">
         Step 1 of 4: Follow these instructions to join your swarm and log in.
       </p>

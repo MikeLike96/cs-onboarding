@@ -57,7 +57,7 @@ export default function AccountSetupForm() {
       </div>
       <h1 className="text-2xl font-bold mb-2 text-center">Welcome to Content Swarm!</h1>
       <p className="text-sm text-muted-foreground mb-8 text-center max-w-[80%] mx-auto">
-        Your 14 day free trial is ready! Please enter your details below to set up your account.
+        Your 14 day free trial is ready! Please enter your details below to create your swarm.
       </p>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">

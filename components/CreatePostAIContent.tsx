@@ -21,12 +21,14 @@ export default function CreatePostAIContent() {
         <ArrowLeft className="mr-2 h-4 w-4" />
         Back
       </Button>
-      <h1 className="text-2xl font-bold mb-2 text-center">How to create a post using AI</h1>
+      <h1 className="text-2xl font-bold mb-2 text-center">Add post</h1>
       <p className="text-sm text-muted-foreground mb-8 text-center max-w-[80%] mx-auto">
         Step 4 of 4: Learn how to create posts using AI in your Swarm.
       </p>
       <p className="text-sm text-foreground/90 mb-8">
-        Boost your social presence with ease. Share content by pasting LinkedIn URLs or create new posts with our AI tool. Enhance your messages with images and emojis for added impact. Craft engaging content for your network in seconds, whether you&apos;re sharing existing ideas or generating fresh ones.
+      Boost your social presence with ease. Share content by pasting LinkedIn URLs or create new posts with our AI tool. Enhance your messages with images and emojis for added impact. 
+      Craft engaging content for your network in seconds, whether you're sharing existing ideas or generating fresh ones. 
+      Choose your method and watch your influence grow!
       </p>
       <div className="space-y-4">
         <Button onClick={handleFinish} className="w-full bg-[#10B981] hover:bg-[#10B981]/90 text-white">
