@@ -68,7 +68,7 @@ export default function AccountSetupForm() {
               <FormItem>
                 <FormLabel>First Name</FormLabel>
                 <FormControl>
-                  <Input placeholder="John" className="input-bg border-border" {...field} />
+                  <Input placeholder="John" className="input-bg border-border placeholder:opacity-50" {...field} />
                 </FormControl>
               </FormItem>
             )}
@@ -80,7 +80,7 @@ export default function AccountSetupForm() {
               <FormItem>
                 <FormLabel>Last Name</FormLabel>
                 <FormControl>
-                  <Input placeholder="Doe" className="input-bg border-border" {...field} />
+                  <Input placeholder="Doe" className="input-bg border-border placeholder:opacity-50" {...field} />
                 </FormControl>
               </FormItem>
             )}
@@ -92,7 +92,7 @@ export default function AccountSetupForm() {
               <FormItem>
                 <FormLabel>Company Email</FormLabel>
                 <FormControl>
-                  <Input placeholder="john@company.com" className="input-bg border-border" {...field} />
+                  <Input placeholder="john@company.com" className="input-bg border-border placeholder:opacity-50" {...field} />
                 </FormControl>
               </FormItem>
             )}
@@ -104,7 +104,7 @@ export default function AccountSetupForm() {
               <FormItem>
                 <FormLabel>Swarm Name</FormLabel>
                 <FormControl>
-                  <Input placeholder="My Awesome Swarm" className="input-bg border-border" {...field} />
+                  <Input placeholder="My Awesome Swarm" className="input-bg border-border placeholder:opacity-50" {...field} />
                 </FormControl>
               </FormItem>
             )}
@@ -116,7 +116,7 @@ export default function AccountSetupForm() {
               <FormItem>
                 <FormLabel>Company Name</FormLabel>
                 <FormControl>
-                  <Input placeholder="Acme Inc." className="input-bg border-border" {...field} />
+                  <Input placeholder="Acme Inc." className="input-bg border-border placeholder:opacity-50" {...field} />
                 </FormControl>
               </FormItem>
             )}
