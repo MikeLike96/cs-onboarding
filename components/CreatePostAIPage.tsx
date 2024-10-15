@@ -2,7 +2,7 @@
 
 import Header from '@/components/Header';
 import CreatePostAIContent from '@/components/CreatePostAIContent';
-import ImagePlaceholder from '@/components/ImagePlaceholder';
+import ImagePlaceholder from '@/components/ImagePlaceholder10';
 
 export default function CreatePostAIPage() {
   return (

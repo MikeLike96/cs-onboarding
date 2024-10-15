@@ -2,7 +2,7 @@
 
 import Header from '@/components/Header';
 import AddCompanyPostsContent from '@/components/AddCompanyPostsContent';
-import ImagePlaceholder from '@/components/ImagePlaceholder';
+import ImagePlaceholder from '@/components/ImagePlaceholder9';
 
 export default function AddCompanyPostsPage() {
   return (
